@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forecast</title>
+
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                background-color: black;
+                color: gainsboro;
+                font-size: 1.5em;
+                font-family: monospace;
+            }
+
+            body {
+                padding-left: 1em;
+            }
+
+            ul {
+                list-style: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul id='forecast'></ul>
+
+    <script>
+        function insert_forecast(times, i) {
+            let list = document.getElementById('forecast');
+            const li = document.createElement('li');
+            const time_period = document.createElement('h1');
+            const temp = document.createElement('p');
+            const description = document.createElement('p');
+            li.appendChild(time_period).innerText = times[i].name;;
+            li.appendChild(temp).innerText = `${times[i].temperature} degrees`;
+            li.appendChild(description).innerText = times[i].detailedForecast;;
+            list.appendChild(li)
+        }
+
+        fetch('https://api.weather.gov/gridpoints/OKX/36,38/forecast')
+            .then(response => response.json()) // parse JSON response
+            .then(data => {
+                // console.log(data)
+                return data;
+            })
+            .then((data) => {
+                const times = data.properties.periods;
+                // console.log(times)
+                for (let i = 0; i < 4; i++) {
+                    insert_forecast(times, i)
+                }
+            })
+            .catch(error => {
+                console.log('Error:', error);
+            })
+
+            
+    </script>
+</body>
+</html>

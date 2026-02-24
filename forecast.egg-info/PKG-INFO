@@ -1,0 +1,13 @@
+Metadata-Version: 2.4
+Name: forecast
+Version: 0.1.0
+Summary: Get a simple forecast for the next couple days.
+Author: a-well-lit-room
+Requires-Dist: certifi==2026.1.4
+Requires-Dist: charset-normalizer==3.4.4
+Requires-Dist: idna==3.11
+Requires-Dist: requests==2.32.5
+Requires-Dist: urllib3==1.26.18
+Dynamic: author
+Dynamic: requires-dist
+Dynamic: summary
