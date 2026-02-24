@@ -1,2 +1,3 @@
 venv/
+forecast.egg-info/
 .DS_Store
