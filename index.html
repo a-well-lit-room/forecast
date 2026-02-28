@@ -6,20 +6,30 @@
     <title>forecast</title>
 
     <style>
+        :root {
+            font-size: 1.5em;
+            font-family: monospace;
+        }
+
+        body {
+                padding-left: 1em;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                background-color: rgb(255, 253, 248);
+                color: black;
+            }
+        }
+
         @media (prefers-color-scheme: dark) {
             :root {
                 background-color: black;
                 color: gainsboro;
-                font-size: 1.5em;
-                font-family: monospace;
-            }
-
-            body {
-                padding-left: 1em;
-            }
-
-            ul {
-                list-style: none;
             }
         }
     </style>
